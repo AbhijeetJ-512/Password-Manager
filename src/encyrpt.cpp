@@ -1,6 +1,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
+#include "../include/password_id.h"
 
 using namespace std;
 string encryption(const string &password, const string &text, const string &master_pass)
@@ -21,6 +22,7 @@ string encryption(const string &password, const string &text, const string &mast
 }
 
 string decryption(const string &password, const string &enc, const string &master_pass)
+
 {
     string command =
         "echo \"" + enc +
@@ -34,6 +36,6 @@ string decryption(const string &password, const string &enc, const string &maste
     else
     {
         cerr << "Decryption failed!" << endl;
-        return NULL; // Decryption failed
+        return -1; 
     }
 }
